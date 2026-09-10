@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Source+Sans+3:wght@400;600;700&display=swap");
 @import "./tokens.css";
 
 *,
@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
 }
 
 body {
@@ -100,13 +101,20 @@ textarea {
 }
 
 .site-main {
-  padding-bottom: 5rem;
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
 }
 
 @media (min-width: 768px) {
   .site-main {
     padding-bottom: 0;
   }
+}
+
+/* Hide Netlify deploy badge */
+[data-netlify-identity-button],
+.netlify-identity-menu,
+iframe[src*="netlify"] {
+  display: none !important;
 }
 
 /* Buttons */
@@ -365,4 +373,29 @@ textarea {
 .form-status.success {
   border-left-color: #1a7a3c;
   background: rgba(26, 122, 60, 0.1);
+}
+
+.required-marker {
+  color: var(--brand-red);
+  font-weight: 700;
+}
+
+.field-error {
+  margin: 0.35rem 0 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--brand-red-dark);
+  background: rgba(196, 30, 42, 0.08);
+  border-left: 2px solid var(--brand-red);
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+  border-color: var(--brand-red);
+}
+
+.form-field input[aria-invalid="true"]:focus-visible,
+.form-field textarea[aria-invalid="true"]:focus-visible {
+  outline-color: rgba(196, 30, 42, 0.35);
+  border-color: var(--brand-red);
 }

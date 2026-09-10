@@ -2,7 +2,35 @@
   command = "npm run build"
   publish = "dist"
 
+# Serve static SEO/asset files directly (not as SPA shell)
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/logo.png"
+  status = 200
+
+[[redirects]]
+  from = "/logo.png"
+  to = "/logo.png"
+  status = 200
+
+# SPA fallback for all other routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Hide Netlify deploy badge on production
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"

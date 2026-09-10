@@ -35,7 +35,7 @@ export function InstallationsPage() {
             <p>{t.installations.sizesBody}</p>
           </div>
           <div className="media-frame">
-            <img src={images.install} alt="" loading="lazy" />
+            <img src={images.install} alt="Professional garage door installation" loading="lazy" />
           </div>
         </div>
       </section>
@@ -50,7 +50,7 @@ export function InstallationsPage() {
             </Link>
           </div>
           <div className="media-frame">
-            <img src={images.fullView} alt="" loading="lazy" />
+            <img src={images.fullView} alt="Full-view glass garage door with modern design" loading="lazy" />
           </div>
         </div>
       </section>

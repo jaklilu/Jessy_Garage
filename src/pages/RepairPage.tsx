@@ -35,7 +35,7 @@ export function RepairPage() {
             </Link>
           </div>
           <div className="media-frame">
-            <img src={images.repair} alt="" loading="lazy" />
+            <img src={images.repair} alt="Garage door repair service in progress" loading="lazy" />
           </div>
         </div>
       </section>

@@ -1,0 +1,27 @@
+.testimonials-list {
+  display: grid;
+  gap: var(--space-lg);
+  max-width: 760px;
+}
+
+.testimonial {
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 4px solid var(--brand-red);
+}
+
+.testimonial p {
+  font-size: 1.15rem;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.testimonial footer {
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  font-style: normal;
+}

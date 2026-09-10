@@ -1,0 +1,33 @@
+.sticky-call {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(90deg, var(--brand-red), var(--brand-red-dark));
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 -8px 28px rgba(10, 22, 40, 0.25);
+}
+
+.sticky-call__label {
+  opacity: 0.9;
+}
+
+.sticky-call__phone {
+  font-size: 1.15rem;
+}
+
+@media (min-width: 768px) {
+  .sticky-call {
+    display: none;
+  }
+}

@@ -74,6 +74,15 @@ export function Header() {
               {t.nav.langEs}
             </Link>
           </div>
+          <a
+            className="site-header__phone-icon"
+            href={`tel:${PHONE_TEL}`}
+            aria-label={t.nav.call}
+          >
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24">
+              <use href="/icons.svg#phone-icon" />
+            </svg>
+          </a>
           <a className="btn btn-primary site-header__call" href={`tel:${PHONE_TEL}`}>
             {t.nav.call} {t.common.phone}
           </a>

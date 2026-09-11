@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { ScrollLink } from "./ScrollLink";
-import { PHONE_TEL, pathFor, switchLocalePath, type PageKey } from "../i18n";
+import { PHONE_TEL, PHONE_DISPLAY, pathFor, switchLocalePath, type PageKey } from "../i18n";
 import { useLocale } from "../hooks/useLocale";
 import "./Header.css";
 import { useState } from "react";
@@ -76,13 +76,14 @@ export function Header() {
             </ScrollLink>
           </div>
           <a
-            className="site-header__phone-icon"
+            className="site-header__call"
             href={`tel:${PHONE_TEL}`}
             aria-label={t.nav.call}
           >
             <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24">
               <use href="/icons.svg#phone-icon" />
             </svg>
+            <span className="site-header__call-text">{PHONE_DISPLAY}</span>
           </a>
           <button
             type="button"

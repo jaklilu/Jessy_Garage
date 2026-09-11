@@ -28,28 +28,60 @@ export function ContactPage() {
         <div className="container contact-layout">
           <div className="contact-details">
             <h2>{t.nav.contact}</h2>
-            <dl>
-              <div>
-                <dt>{t.contact.phoneLabel}</dt>
-                <dd>
-                  <a href={`tel:${PHONE_TEL}`}>{t.common.phone}</a>
-                </dd>
+            
+            <div className="contact-cards">
+              <a href={`tel:${PHONE_TEL}`} className="contact-card contact-card--phone">
+                <div className="contact-card__icon">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/icons.svg#phone-icon" />
+                  </svg>
+                </div>
+                <div className="contact-card__content">
+                  <h3>{t.contact.phoneLabel}</h3>
+                  <p className="contact-card__value">{t.common.phone}</p>
+                </div>
+              </a>
+              
+              <div className="contact-card">
+                <div className="contact-card__icon">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/icons.svg#clock-icon" />
+                  </svg>
+                </div>
+                <div className="contact-card__content">
+                  <h3>{t.contact.hoursLabel}</h3>
+                  <p>{t.common.hours}</p>
+                  <p className="contact-card__subtext">{t.common.emergency}</p>
+                </div>
               </div>
-              <div>
-                <dt>{t.contact.hoursLabel}</dt>
-                <dd>
-                  {t.common.hours}
-                  <br />
-                  {t.common.emergency}
-                </dd>
+              
+              <div className="contact-card">
+                <div className="contact-card__icon">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/icons.svg#location-icon" />
+                  </svg>
+                </div>
+                <div className="contact-card__content">
+                  <h3>{t.contact.areaLabel}</h3>
+                  <p>{t.common.serviceArea}</p>
+                </div>
               </div>
-              <div>
-                <dt>{t.contact.areaLabel}</dt>
-                <dd>{t.common.serviceArea}</dd>
+            </div>
+
+            <div className="contact-badges">
+              <div className="contact-badge">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+                  <use href="/icons.svg#credit-card-icon" />
+                </svg>
+                <span>{t.common.payments}</span>
               </div>
-            </dl>
-            <p className="contact-note">{t.common.payments}</p>
-            <p className="contact-note">{t.common.bilingual}</p>
+              <div className="contact-badge">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+                  <use href="/icons.svg#language-icon" />
+                </svg>
+                <span>{t.common.bilingual}</span>
+              </div>
+            </div>
           </div>
 
           <div className="contact-form-wrap">

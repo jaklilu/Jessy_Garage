@@ -84,9 +84,6 @@ export function Header() {
               <use href="/icons.svg#phone-icon" />
             </svg>
           </a>
-          <a className="btn btn-primary site-header__call" href={`tel:${PHONE_TEL}`}>
-            {t.nav.call} {t.common.phone}
-          </a>
           <button
             type="button"
             className="site-header__menu"
@@ -108,8 +105,16 @@ export function Header() {
         <ScrollLink to={switchTo} className="site-header__drawer-lang" onClick={() => setOpen(false)}>
           {otherLocale === "es" ? "Español" : "English"}
         </ScrollLink>
-        <a className="btn btn-primary" href={`tel:${PHONE_TEL}`} onClick={() => setOpen(false)}>
-          {t.nav.call} {t.common.phone}
+        <a
+          className="site-header__drawer-phone"
+          href={`tel:${PHONE_TEL}`}
+          onClick={() => setOpen(false)}
+          aria-label={t.nav.call}
+        >
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+            <use href="/icons.svg#phone-icon" />
+          </svg>
+          <span>{t.nav.call}</span>
         </a>
       </div>
     </header>

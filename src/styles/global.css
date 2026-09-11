@@ -110,11 +110,74 @@ textarea {
   }
 }
 
-/* Hide Netlify deploy badge */
+/* ========================================
+   Netlify HUD / Badge Suppression
+   ========================================
+   Netlify injects a public HUD/badge via /.netlify/scripts/hud?variant=public
+   on free/starter plans. This must be hidden to avoid covering the sticky
+   phone CTA bar on mobile. The HUD may use custom elements, shadow DOM, or
+   dynamically injected markup.
+   
+   NOTE: To fully disable the public HUD, also toggle it off in the Netlify
+   dashboard under Site Settings > Build & deploy > Deploy notifications.
+   ======================================== */
+
+/* Netlify HUD custom elements and containers */
+netlify-toolbar,
+netlify-hud,
+netlify-identity-widget,
+[data-netlify-hud],
+[data-netlify-toolbar],
 [data-netlify-identity-button],
+.netlify-toolbar,
+.netlify-hud,
+.netlify-identity-button,
 .netlify-identity-menu,
-iframe[src*="netlify"] {
+#netlify-identity-widget,
+#netlify-hud,
+#netlify-toolbar {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Netlify badge images and links */
+[class*="netlify-badge"],
+[id*="netlify-badge"],
+a[href*="netlify.com"][title*="Deploys"],
+a[href*="netlify.app"][title*="Deploys"],
+img[alt*="Deploys by Netlify"],
+img[alt*="Netlify Status"],
+img[src*="netlify-color"],
+a[href*="netlify.com/powered-by"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Netlify-injected iframes and scripts UI */
+iframe[src*="netlify"],
+iframe[src*=".netlify.app"],
+script[src*="/.netlify/scripts/hud"] + *,
+div[style*="position: fixed"][style*="bottom"]:has(a[href*="netlify"]) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Ultra-aggressive fallback: hide any fixed-position element at bottom that looks like a badge */
+body > div[style*="position: fixed"][style*="bottom: 0"],
+body > div[style*="position: fixed"][style*="bottom:0"],
+body > aside[style*="position: fixed"][style*="bottom"] {
+  /* Only target small badge-like elements, not our sticky bar */
+  &:not(.sticky-call):not([class*="sticky"]) {
+    z-index: 1 !important;
+  }
 }
 
 /* Buttons */
@@ -400,19 +463,3 @@ iframe[src*="netlify"] {
   border-color: var(--brand-red);
 }
 
-/* Hide Netlify badge to prevent overlap with sticky call bar */
-.netlify-identity-button,
-[data-netlify-identity-button],
-.netlify-identity-menu,
-#netlify-identity-widget,
-[class*="netlify-badge"],
-[id*="netlify-badge"],
-a[href*="netlify.com"][title*="Deploys"],
-a[href*="netlify.app"][title*="Deploys"],
-img[alt*="Deploys by Netlify"],
-img[alt*="Netlify Status"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { BUSINESS_NAME, PHONE_TEL, pathFor } from "../i18n";
 import { useLocale } from "../hooks/useLocale";
+import { ScrollLink } from "./ScrollLink";
 import "./Footer.css";
 
 export function Footer() {
@@ -29,22 +29,22 @@ export function Footer() {
           <h3>{t.footer.pages}</h3>
           <ul className="site-footer__links">
             <li>
-              <Link to={pathFor(locale, "home")}>{t.nav.home}</Link>
+              <ScrollLink to={pathFor(locale, "home")}>{t.nav.home}</ScrollLink>
             </li>
             <li>
-              <Link to={pathFor(locale, "repair")}>{t.nav.repair}</Link>
+              <ScrollLink to={pathFor(locale, "repair")}>{t.nav.repair}</ScrollLink>
             </li>
             <li>
-              <Link to={pathFor(locale, "installations")}>{t.nav.installations}</Link>
+              <ScrollLink to={pathFor(locale, "installations")}>{t.nav.installations}</ScrollLink>
             </li>
             <li>
-              <Link to={pathFor(locale, "testimonials")}>{t.nav.testimonials}</Link>
+              <ScrollLink to={pathFor(locale, "testimonials")}>{t.nav.testimonials}</ScrollLink>
             </li>
             <li>
-              <Link to={pathFor(locale, "gallery")}>{t.nav.gallery}</Link>
+              <ScrollLink to={pathFor(locale, "gallery")}>{t.nav.gallery}</ScrollLink>
             </li>
             <li>
-              <Link to={pathFor(locale, "contact")}>{t.nav.contact}</Link>
+              <ScrollLink to={pathFor(locale, "contact")}>{t.nav.contact}</ScrollLink>
             </li>
           </ul>
           <p className="site-footer__note">{t.common.payments}</p>

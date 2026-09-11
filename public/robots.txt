@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jessy-garage.netlify.app/sitemap.xml

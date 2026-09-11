@@ -1,6 +1,9 @@
 import { useEffect } from "react";
-import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_TEL } from "../i18n";
+import { useLocation } from "react-router-dom";
+import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_TEL, switchLocalePath, type Locale } from "../i18n";
 import { useLocale } from "../hooks/useLocale";
+
+const SITE_URL = "https://jessy-garage.netlify.app";
 
 type SeoProps = {
   title: string;
@@ -9,10 +12,15 @@ type SeoProps = {
 
 export function Seo({ title, description }: SeoProps) {
   const { locale } = useLocale();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     document.title = title;
     document.documentElement.lang = locale;
+
+    const currentUrl = `${SITE_URL}${pathname}`;
+    const otherLocale: Locale = locale === "en" ? "es" : "en";
+    const alternateUrl = `${SITE_URL}${switchLocalePath(pathname, otherLocale)}`;
 
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
@@ -22,12 +30,55 @@ export function Seo({ title, description }: SeoProps) {
     }
     meta.setAttribute("content", description);
 
+    function setMeta(name: string, content: string, isProperty = false) {
+      const attr = isProperty ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    }
+
+    function setLink(rel: string, href: string, extraAttrs?: Record<string, string>) {
+      const selector = extraAttrs
+        ? `link[rel="${rel}"]${Object.entries(extraAttrs).map(([k, v]) => `[${k}="${v}"]`).join("")}`
+        : `link[rel="${rel}"]`;
+      let el = document.querySelector(selector) as HTMLLinkElement | null;
+      if (!el) {
+        el = document.createElement("link");
+        el.rel = rel;
+        if (extraAttrs) {
+          Object.entries(extraAttrs).forEach(([k, v]) => el!.setAttribute(k, v));
+        }
+        document.head.appendChild(el);
+      }
+      el.href = href;
+    }
+
+    setLink("canonical", currentUrl);
+    setLink("alternate", currentUrl, { hreflang: locale });
+    setLink("alternate", alternateUrl, { hreflang: otherLocale });
+
+    setMeta("og:type", "website", true);
+    setMeta("og:site_name", BUSINESS_NAME, true);
+    setMeta("og:title", title, true);
+    setMeta("og:description", description, true);
+    setMeta("og:url", currentUrl, true);
+    setMeta("og:locale", locale === "en" ? "en_US" : "es_MX", true);
+    setMeta("og:locale:alternate", locale === "en" ? "es_MX" : "en_US", true);
+
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", title);
+    setMeta("twitter:description", description);
+
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: BUSINESS_NAME,
       telephone: PHONE_DISPLAY,
-      url: "https://jessygaragedoors.com",
+      url: SITE_URL,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bell",
@@ -60,7 +111,7 @@ export function Seo({ title, description }: SeoProps) {
       document.head.appendChild(script);
     }
     script.textContent = JSON.stringify(jsonLd);
-  }, [title, description, locale]);
+  }, [title, description, locale, pathname]);
 
   return null;
 }

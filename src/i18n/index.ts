@@ -239,6 +239,11 @@ export const en = {
     sending: "Sending…",
     success: "Thank you! We have received your submission.",
     error: "Something went wrong. Please try again or call us.",
+    required: "Required",
+    nameRequired: "Please enter your name.",
+    emailRequired: "Please enter your email address.",
+    emailInvalid: "Please enter a valid email address.",
+    commentsRequired: "Please enter your message.",
   },
 };
 
@@ -436,6 +441,11 @@ export const es: Dictionary = {
     sending: "Enviando…",
     success: "¡Gracias! Hemos recibido su mensaje.",
     error: "Algo salió mal. Intente de nuevo o llámenos.",
+    required: "Requerido",
+    nameRequired: "Por favor ingrese su nombre.",
+    emailRequired: "Por favor ingrese su correo electrónico.",
+    emailInvalid: "Por favor ingrese un correo electrónico válido.",
+    commentsRequired: "Por favor ingrese su mensaje.",
   },
 };
 

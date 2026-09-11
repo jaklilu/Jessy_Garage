@@ -5,7 +5,7 @@ export const images = {
   install: "/images/door-installation.jpg",
   about: "/images/about-service.jpg",
   screens: "/images/screen-door.jpg",
-  fullView: "/images/door-installation.jpg",
+  fullView: "/images/flush-doors-banner.jpg",
   flush: "/images/flush-doors-banner.jpg",
   contact: "/images/contact-garage.jpg",
   pageRepair: "/images/repair-services.jpg",

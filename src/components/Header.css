@@ -135,10 +135,32 @@
   }
 }
 
-.site-header__call {
-  display: none;
-  padding: 0.65rem 1rem;
-  font-size: 1rem;
+.site-header__drawer-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--brand-red);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.site-header__drawer-phone:hover {
+  background: var(--brand-red-dark);
+  transform: translateY(-2px);
+}
+
+.site-header__drawer-phone svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .site-header__menu {
@@ -199,14 +221,6 @@
 
   .site-header__nav {
     display: flex;
-  }
-
-  .site-header__phone-icon {
-    display: none;
-  }
-
-  .site-header__call {
-    display: inline-flex;
   }
 
   .site-header__menu,

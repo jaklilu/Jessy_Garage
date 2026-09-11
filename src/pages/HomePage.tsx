@@ -29,7 +29,7 @@ export function HomePage() {
             </Link>
           </div>
           <div className="media-frame">
-            <img src={images.repair} alt="" loading="lazy" />
+            <img src={images.repair} alt="Technician performing garage door repair" loading="lazy" />
           </div>
         </div>
       </section>
@@ -45,7 +45,7 @@ export function HomePage() {
             </Link>
           </div>
           <div className="media-frame">
-            <img src={images.install} alt="" loading="lazy" />
+            <img src={images.install} alt="New garage door installation on a residential home" loading="lazy" />
           </div>
         </div>
       </section>
@@ -66,7 +66,7 @@ export function HomePage() {
       <section className="section section-alt">
         <div className="container split">
           <div className="media-frame">
-            <img src={images.about} alt="" loading="lazy" />
+            <img src={images.about} alt="Modern home with stylish garage door" loading="lazy" />
           </div>
           <div className="prose-block reveal" ref={aboutRef}>
             <p className="eyebrow">{t.home.aboutEyebrow}</p>

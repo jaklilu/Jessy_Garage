@@ -22,6 +22,8 @@
 
 .gallery-item__media {
   min-height: 240px;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--paper) 0%, var(--paper-warm) 100%);
 }
 
 .gallery-item__media img {

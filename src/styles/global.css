@@ -366,3 +366,20 @@ textarea {
   border-left-color: #1a7a3c;
   background: rgba(26, 122, 60, 0.1);
 }
+
+/* Hide Netlify badge to prevent overlap with sticky call bar */
+.netlify-identity-button,
+[data-netlify-identity-button],
+.netlify-identity-menu,
+#netlify-identity-widget,
+[class*="netlify-badge"],
+[id*="netlify-badge"],
+a[href*="netlify.com"][title*="Deploys"],
+a[href*="netlify.app"][title*="Deploys"],
+img[alt*="Deploys by Netlify"],
+img[alt*="Netlify Status"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

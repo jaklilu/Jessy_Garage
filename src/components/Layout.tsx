@@ -4,9 +4,11 @@ import { Footer } from "./Footer";
 import { StickyCall } from "./StickyCall";
 import { LocaleContext } from "../hooks/useLocale";
 import { getDictionary, type Locale } from "../i18n";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 export function Layout() {
   const { pathname } = useLocation();
+  useScrollToTop();
   const locale: Locale = pathname.startsWith("/es") ? "es" : "en";
   const t = getDictionary(locale);
 

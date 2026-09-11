@@ -26,8 +26,11 @@ export function Footer() {
           <p>{t.common.serviceArea}</p>
         </div>
         <div>
-          <h3>{t.nav.home}</h3>
+          <h3>{t.footer.pages}</h3>
           <ul className="site-footer__links">
+            <li>
+              <Link to={pathFor(locale, "home")}>{t.nav.home}</Link>
+            </li>
             <li>
               <Link to={pathFor(locale, "repair")}>{t.nav.repair}</Link>
             </li>

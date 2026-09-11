@@ -98,6 +98,7 @@ export const en = {
     rights: "All rights reserved.",
     aboutBlurb:
       "Family-owned garage door repair and installation serving Bell and Los Angeles County since 2015.",
+    pages: "Pages",
   },
   stickyCall: {
     label: "Call Jessy Garage Doors",
@@ -298,6 +299,7 @@ export const es: Dictionary = {
     rights: "Todos los derechos reservados.",
     aboutBlurb:
       "Reparación e instalación de puertas de garaje de propiedad familiar al servicio de Bell y el Condado de Los Ángeles desde 2015.",
+    pages: "Páginas",
   },
   stickyCall: {
     label: "Llamar a Jessy Garage Doors",

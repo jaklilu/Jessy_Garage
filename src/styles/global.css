@@ -399,3 +399,20 @@ iframe[src*="netlify"] {
   outline-color: rgba(196, 30, 42, 0.35);
   border-color: var(--brand-red);
 }
+
+/* Hide Netlify badge to prevent overlap with sticky call bar */
+.netlify-identity-button,
+[data-netlify-identity-button],
+.netlify-identity-menu,
+#netlify-identity-widget,
+[class*="netlify-badge"],
+[id*="netlify-badge"],
+a[href*="netlify.com"][title*="Deploys"],
+a[href*="netlify.app"][title*="Deploys"],
+img[alt*="Deploys by Netlify"],
+img[alt*="Netlify Status"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

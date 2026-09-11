@@ -292,7 +292,7 @@ export const es: Dictionary = {
     payments: "Aceptamos efectivo, cheques y tarjetas de crédito",
     hoursDays: "Lunes – Sábado",
     hoursTime: "8:00 AM – 7:00 PM",
-    emergency: "Emergencias y fuera de horario disponible",
+    emergency: "Servicio de emergencias y atención fuera de horario disponible",
     serviceArea: "Condado de Los Ángeles y Bell, California",
     address: "Bell, CA 90201",
     tagline: "¡Lo que diga — Lo reparamos!",

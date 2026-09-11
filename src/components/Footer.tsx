@@ -21,7 +21,7 @@ export function Footer() {
             <a href={`tel:${PHONE_TEL}`}>{t.common.phone}</a>
           </p>
           <p>{t.common.address}</p>
-          <p>{t.common.hours}</p>
+          <p>{t.common.hoursDays}, {t.common.hoursTime}</p>
           <p>{t.common.emergency}</p>
           <p>{t.common.serviceArea}</p>
         </div>

@@ -107,11 +107,32 @@
   letter-spacing: 0.02em;
 }
 
+.contact-card__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contact-card__days {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.contact-card__time {
+  font-size: 1.05rem;
+  color: var(--brand-blue);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .contact-card__subtext {
-  margin-top: 0.35rem !important;
-  font-size: 0.9rem !important;
+  margin-top: 0.6rem !important;
+  padding-top: 0.5rem;
+  font-size: 0.85rem !important;
   color: var(--ink-muted) !important;
-  font-style: italic;
+  border-top: 1px solid rgba(10, 22, 40, 0.08);
 }
 
 .contact-badges {

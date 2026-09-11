@@ -50,7 +50,10 @@ export function ContactPage() {
                 </div>
                 <div className="contact-card__content">
                   <h3>{t.contact.hoursLabel}</h3>
-                  <p>{t.common.hours}</p>
+                  <p className="contact-card__hours">
+                    <span className="contact-card__days">{t.common.hoursDays}</span>
+                    <span className="contact-card__time">{t.common.hoursTime}</span>
+                  </p>
                   <p className="contact-card__subtext">{t.common.emergency}</p>
                 </div>
               </div>

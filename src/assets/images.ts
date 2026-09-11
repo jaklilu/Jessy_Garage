@@ -1,9 +1,9 @@
 /** Garage door imagery from Jessy Garage Doors portfolio. */
 export const images = {
-  hero: "/images/hero-garage-door.jpg",
+  hero: "/images/about-service.jpg",
   repair: "/images/repair-services.jpg",
   install: "/images/door-installation.jpg",
-  about: "/images/about-service.jpg",
+  about: "/images/hero-garage-door.jpg",
   screens: "/images/screen-door.jpg",
   fullView: "/images/flush-doors-banner.jpg",
   flush: "/images/flush-doors-banner.jpg",

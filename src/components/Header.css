@@ -100,7 +100,7 @@
   color: var(--white);
 }
 
-.site-header__phone-icon {
+.site-header__call {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -113,23 +113,28 @@
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.site-header__phone-icon:hover {
+.site-header__call:hover {
   background: var(--brand-red-dark);
   transform: scale(1.05);
 }
 
-.site-header__phone-icon svg {
+.site-header__call svg {
   width: 20px;
   height: 20px;
   fill: currentColor;
+  flex-shrink: 0;
+}
+
+.site-header__call-text {
+  display: none;
 }
 
 @media (min-width: 400px) {
-  .site-header__phone-icon {
+  .site-header__call {
     width: 42px;
     height: 42px;
   }
-  .site-header__phone-icon svg {
+  .site-header__call svg {
     width: 22px;
     height: 22px;
   }
@@ -234,5 +239,21 @@
 
   .site-header__actions {
     gap: 0.65rem;
+  }
+
+  .site-header__call {
+    width: auto;
+    height: auto;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+  }
+
+  .site-header__call-text {
+    display: inline;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 }

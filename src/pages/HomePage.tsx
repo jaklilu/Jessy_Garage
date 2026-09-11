@@ -20,22 +20,6 @@ export function HomePage() {
 
       <section className="section">
         <div className="container split">
-          <div className="prose-block reveal" ref={repairRef}>
-            <p className="eyebrow">{t.nav.repair}</p>
-            <h2>{t.home.repairTitle}</h2>
-            <p>{t.home.repairBody}</p>
-            <Link className="btn btn-outline" to={pathFor(locale, "repair")}>
-              {t.home.repairLink}
-            </Link>
-          </div>
-          <div className="media-frame">
-            <img src={images.repair} alt="Technician performing garage door repair" loading="lazy" />
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div className="container split split-reverse">
           <div className="prose-block reveal" ref={installRef}>
             <p className="eyebrow">{t.nav.installations}</p>
             <h2>{t.home.installTitle}</h2>
@@ -46,6 +30,22 @@ export function HomePage() {
           </div>
           <div className="media-frame">
             <img src={images.install} alt="New garage door installation on a residential home" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container split split-reverse">
+          <div className="prose-block reveal" ref={repairRef}>
+            <p className="eyebrow">{t.nav.repair}</p>
+            <h2>{t.home.repairTitle}</h2>
+            <p>{t.home.repairBody}</p>
+            <Link className="btn btn-outline" to={pathFor(locale, "repair")}>
+              {t.home.repairLink}
+            </Link>
+          </div>
+          <div className="media-frame">
+            <img src={images.repair} alt="Technician performing garage door repair" loading="lazy" />
           </div>
         </div>
       </section>

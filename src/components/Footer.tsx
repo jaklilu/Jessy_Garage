@@ -16,57 +16,57 @@ export function Footer() {
           <p className="site-footer__tag">{t.common.tagline}</p>
         </div>
 
-        <div className="site-footer__card site-footer__card--stack">
-          <a href={`tel:${PHONE_TEL}`} className="footer-info-card footer-info-card--link">
-            <div className="footer-info-card__icon">
+        <div className="site-footer__card site-footer__card--info">
+          <a href={`tel:${PHONE_TEL}`} className="footer-info-row footer-info-row--link">
+            <div className="footer-info-row__icon">
               <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
                 <use href="/icons.svg#phone-icon" />
               </svg>
             </div>
-            <div className="footer-info-card__content">
+            <div className="footer-info-row__content">
               <h3>{t.contact.phoneLabel}</h3>
-              <p className="footer-info-card__hours">
-                <span className="footer-info-card__time footer-info-card__time--accent">
+              <p className="footer-info-row__hours">
+                <span className="footer-info-row__time footer-info-row__time--accent">
                   {t.common.phone}
                 </span>
               </p>
-              <p className="footer-info-card__subtext">{t.common.callNow}</p>
+              <p className="footer-info-row__subtext">{t.common.callNow}</p>
             </div>
           </a>
 
-          <div className="footer-info-card">
-            <div className="footer-info-card__icon">
+          <div className="footer-info-row">
+            <div className="footer-info-row__icon">
               <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
                 <use href="/icons.svg#clock-icon" />
               </svg>
             </div>
-            <div className="footer-info-card__content">
+            <div className="footer-info-row__content">
               <h3>{t.contact.hoursLabel}</h3>
-              <p className="footer-info-card__hours">
-                <span className="footer-info-card__days">{t.common.hoursDays}</span>
-                <span className="footer-info-card__time">{t.common.hoursTime}</span>
+              <p className="footer-info-row__hours">
+                <span className="footer-info-row__days">{t.common.hoursDays}</span>
+                <span className="footer-info-row__time">{t.common.hoursTime}</span>
               </p>
-              <p className="footer-info-card__subtext">{t.common.emergency}</p>
+              <p className="footer-info-row__subtext">{t.common.emergency}</p>
             </div>
           </div>
 
-          <div className="footer-info-card">
-            <div className="footer-info-card__icon">
+          <div className="footer-info-row">
+            <div className="footer-info-row__icon">
               <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
                 <use href="/icons.svg#location-icon" />
               </svg>
             </div>
-            <div className="footer-info-card__content">
+            <div className="footer-info-row__content">
               <h3>{t.contact.areaLabel}</h3>
-              <p className="footer-info-card__hours">
-                <span className="footer-info-card__days">{t.common.address}</span>
-                <span className="footer-info-card__time">{t.common.serviceArea}</span>
+              <p className="footer-info-row__hours">
+                <span className="footer-info-row__days">{t.common.address}</span>
+                <span className="footer-info-row__time">{t.common.serviceArea}</span>
               </p>
             </div>
           </div>
         </div>
 
-        <div className="site-footer__card">
+        <div className="site-footer__card site-footer__card--pages">
           <h3 className="site-footer__heading">{t.footer.pages}</h3>
           <ul className="site-footer__links">
             <li>

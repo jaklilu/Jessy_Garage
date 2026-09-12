@@ -1,13 +1,9 @@
 import { Seo } from "../components/Seo";
+import { Slideshow } from "../components/Slideshow";
+import { galleryAlbums, type GalleryAlbumId } from "../assets/gallery";
 import { images } from "../assets/images";
 import { useLocale } from "../hooks/useLocale";
 import "./GalleryPage.css";
-
-const galleryImages = {
-  screens: images.screens,
-  "full-view": images.fullView,
-  flush: images.flush,
-} as const;
 
 export function GalleryPage() {
   const { t } = useLocale();
@@ -17,7 +13,7 @@ export function GalleryPage() {
       <Seo title={t.meta.galleryTitle} description={t.meta.galleryDesc} />
       <header
         className="page-hero"
-        style={{ ["--page-hero-image" as string]: `url(${images.fullView})` }}
+        style={{ ["--page-hero-image" as string]: `url(${galleryAlbums.screens[0] ?? images.fullView})` }}
       >
         <div className="container">
           <p className="eyebrow" style={{ color: "var(--brand-silver)" }}>
@@ -29,20 +25,26 @@ export function GalleryPage() {
       </header>
 
       <section className="section">
-        <div className="container gallery-grid">
-          {t.gallery.categories.map((cat) => (
-            <article key={cat.id} className="gallery-item">
-              <div className="media-frame gallery-item__media">
-                <img
-                  src={galleryImages[cat.id as keyof typeof galleryImages]}
+        <div className="container gallery-list">
+          {t.gallery.categories.map((cat) => {
+            const albumId = cat.id as GalleryAlbumId;
+            const album = galleryAlbums[albumId] ?? [];
+            return (
+              <article key={cat.id} className="gallery-album">
+                <div className="gallery-album__copy">
+                  <h2>{cat.title}</h2>
+                  <p>{cat.body}</p>
+                </div>
+                <Slideshow
+                  images={album}
                   alt={cat.title}
-                  loading="lazy"
+                  prevLabel={t.gallery.prev}
+                  nextLabel={t.gallery.next}
+                  ofLabel={t.gallery.of}
                 />
-              </div>
-              <h2>{cat.title}</h2>
-              <p>{cat.body}</p>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </section>
     </>

@@ -62,7 +62,7 @@ export const en = {
     testimonialsTitle: "Customer Testimonials | Jessy Garage Doors",
     testimonialsDesc: "See what homeowners say about Jessy Garage Doors in Bell, CA.",
     galleryTitle: "Garage Door Gallery | Jessy Garage Doors",
-    galleryDesc: "Screens, full-view, and flush garage doors from Jessy Garage Doors.",
+    galleryDesc: "Screens, flush doors, and garage door photos from Jessy Garage Doors.",
     contactTitle: "Contact Us | Jessy Garage Doors — Bell, CA",
     contactDesc:
       "Call or write Jessy Garage Doors for a free estimate. Mon–Sat 8am–7pm. Emergency service available.",
@@ -204,22 +204,26 @@ export const en = {
   gallery: {
     eyebrow: "Gallery",
     title: "Doors that elevate your home",
-    intro: "Explore popular styles we install — screens, full-view glass, and clean flush panels.",
+    intro:
+      "Browse real project photos from our gallery — screens, flush doors, and garage doors. Swipe or tap through each slideshow.",
+    prev: "Previous photo",
+    next: "Next photo",
+    of: "of",
     categories: [
       {
         id: "screens",
-        title: "Garage door screens",
-        body: "Screen solutions that let air and light in while keeping pests out.",
-      },
-      {
-        id: "full-view",
-        title: "Full-view garage doors",
-        body: "Glass full-view doors for modern curb appeal and natural light.",
+        title: "Screens",
+        body: "Garage door screens that let air and light in while keeping pests out.",
       },
       {
         id: "flush",
-        title: "Flush garage doors",
+        title: "Flush doors",
         body: "Clean, contemporary flush panels that suit a wide range of homes.",
+      },
+      {
+        id: "full-view",
+        title: "Garage doors",
+        body: "Full-view and classic garage doors for curb appeal and everyday use.",
       },
     ],
   },
@@ -264,7 +268,7 @@ export const es: Dictionary = {
     testimonialsTitle: "Testimonios de Clientes | Jessy Garage Doors",
     testimonialsDesc: "Lo que dicen los propietarios sobre Jessy Garage Doors en Bell, CA.",
     galleryTitle: "Galería de Puertas de Garaje | Jessy Garage Doors",
-    galleryDesc: "Pantallas, puertas de vista completa y paneles flush de Jessy Garage Doors.",
+    galleryDesc: "Fotos de pantallas, puertas flush y puertas de garaje de Jessy Garage Doors.",
     contactTitle: "Contáctenos | Jessy Garage Doors — Bell, CA",
     contactDesc:
       "Llame o escriba a Jessy Garage Doors para un presupuesto gratis. Lun–Sáb 8am–7pm. Servicio de emergencia disponible.",
@@ -407,22 +411,25 @@ export const es: Dictionary = {
     eyebrow: "Galería",
     title: "Puertas que elevan su hogar",
     intro:
-      "Explore estilos populares que instalamos — pantallas, vista completa de vidrio y paneles flush limpios.",
+      "Vea fotos reales de nuestros proyectos — pantallas, puertas flush y puertas de garaje. Deslice o toque cada presentación.",
+    prev: "Foto anterior",
+    next: "Foto siguiente",
+    of: "de",
     categories: [
       {
         id: "screens",
-        title: "Pantallas para puertas de garaje",
-        body: "Soluciones de pantalla que dejan entrar aire y luz mientras mantienen fuera las plagas.",
-      },
-      {
-        id: "full-view",
-        title: "Puertas de garaje de vista completa",
-        body: "Puertas de vidrio de vista completa para un estilo moderno y luz natural.",
+        title: "Pantallas",
+        body: "Pantallas para puertas de garaje que dejan entrar aire y luz mientras mantienen fuera las plagas.",
       },
       {
         id: "flush",
-        title: "Puertas de garaje flush",
+        title: "Puertas flush",
         body: "Paneles flush limpios y contemporáneos que combinan con muchos hogares.",
+      },
+      {
+        id: "full-view",
+        title: "Puertas de garaje",
+        body: "Puertas de vista completa y clásicas para mejorar la apariencia y el uso diario.",
       },
     ],
   },

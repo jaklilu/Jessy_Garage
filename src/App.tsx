@@ -6,6 +6,7 @@ import { InstallationsPage } from "./pages/InstallationsPage";
 import { TestimonialsPage } from "./pages/TestimonialsPage";
 import { GalleryPage } from "./pages/GalleryPage";
 import { ContactPage } from "./pages/ContactPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
         <Route path="contacto" element={<ContactPage />} />
       </Route>
 
-      <Route path="*" element={<Navigate to="/en" replace />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

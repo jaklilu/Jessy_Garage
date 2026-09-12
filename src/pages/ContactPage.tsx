@@ -12,11 +12,11 @@ export function ContactPage() {
     <>
       <Seo title={t.meta.contactTitle} description={t.meta.contactDesc} />
       <header
-        className="page-hero"
+        className="page-hero page-hero--soft"
         style={{ ["--page-hero-image" as string]: `url(${images.contact})` }}
       >
         <div className="container">
-          <p className="eyebrow" style={{ color: "var(--brand-silver)" }}>
+          <p className="eyebrow" style={{ color: "var(--brand-red)" }}>
             {t.contact.eyebrow}
           </p>
           <h1>{t.contact.title}</h1>
@@ -24,13 +24,13 @@ export function ContactPage() {
         </div>
       </header>
 
-      <section className="section">
+      <section className="section contact-section">
         <div className="container contact-layout">
           <div className="contact-details">
             <h2>{t.nav.contact}</h2>
-            
+
             <div className="contact-cards">
-              <a href={`tel:${PHONE_TEL}`} className="contact-card contact-card--phone">
+              <a href={`tel:${PHONE_TEL}`} className="contact-card contact-card--link">
                 <div className="contact-card__icon">
                   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
                     <use href="/icons.svg#phone-icon" />
@@ -38,10 +38,15 @@ export function ContactPage() {
                 </div>
                 <div className="contact-card__content">
                   <h3>{t.contact.phoneLabel}</h3>
-                  <p className="contact-card__value">{t.common.phone}</p>
+                  <p className="contact-card__hours">
+                    <span className="contact-card__time contact-card__time--accent">
+                      {t.common.phone}
+                    </span>
+                  </p>
+                  <p className="contact-card__subtext">{t.common.callNow}</p>
                 </div>
               </a>
-              
+
               <div className="contact-card">
                 <div className="contact-card__icon">
                   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
@@ -57,7 +62,7 @@ export function ContactPage() {
                   <p className="contact-card__subtext">{t.common.emergency}</p>
                 </div>
               </div>
-              
+
               <div className="contact-card">
                 <div className="contact-card__icon">
                   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
@@ -66,7 +71,10 @@ export function ContactPage() {
                 </div>
                 <div className="contact-card__content">
                   <h3>{t.contact.areaLabel}</h3>
-                  <p>{t.common.serviceArea}</p>
+                  <p className="contact-card__hours">
+                    <span className="contact-card__days">{t.common.address}</span>
+                    <span className="contact-card__time">{t.common.serviceArea}</span>
+                  </p>
                 </div>
               </div>
             </div>

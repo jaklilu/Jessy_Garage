@@ -77,6 +77,36 @@
   }
 }
 
+/* Mobile: lift hero copy so Free Estimate clears the sticky call bar */
+@media (max-width: 899px) {
+  .home-hero {
+    min-height: 100svh;
+    align-items: flex-end;
+    padding-top: calc(var(--header-h) + 0.75rem);
+    padding-bottom: calc(1in + 4.75rem);
+  }
+
+  .home-hero__logo {
+    height: clamp(56px, 16vw, 84px);
+    margin-bottom: 0.65rem;
+  }
+
+  .home-hero__tagline {
+    margin-bottom: 0.45rem;
+    font-size: 1rem;
+  }
+
+  .home-hero h1 {
+    margin-bottom: 0.65rem;
+    font-size: clamp(1.85rem, 7.5vw, 2.6rem);
+  }
+
+  .home-hero__support {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 900px) {
   .home-hero {
     align-items: center;

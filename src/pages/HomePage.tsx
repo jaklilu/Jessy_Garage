@@ -63,7 +63,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section section-alt section--to-footer">
         <div className="container split">
           <div className="media-frame">
             <img src={images.about} alt="Modern home with stylish garage door" loading="lazy" />

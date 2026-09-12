@@ -12,11 +12,11 @@ export function ContactPage() {
     <>
       <Seo title={t.meta.contactTitle} description={t.meta.contactDesc} />
       <header
-        className="page-hero page-hero--soft"
+        className="page-hero"
         style={{ ["--page-hero-image" as string]: `url(${images.contact})` }}
       >
         <div className="container">
-          <p className="eyebrow" style={{ color: "var(--brand-red)" }}>
+          <p className="eyebrow" style={{ color: "var(--brand-silver)" }}>
             {t.contact.eyebrow}
           </p>
           <h1>{t.contact.title}</h1>

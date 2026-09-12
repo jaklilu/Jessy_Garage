@@ -1,27 +1,3 @@
-.page-hero--soft {
-  color: var(--ink);
-  background:
-    linear-gradient(
-      115deg,
-      rgba(247, 248, 250, 0.94) 0%,
-      rgba(238, 241, 246, 0.88) 55%,
-      rgba(255, 255, 255, 0.82) 100%
-    ),
-    var(--page-hero-image) center / cover no-repeat;
-}
-
-.page-hero--soft h1 {
-  color: var(--brand-navy);
-}
-
-.page-hero--soft p {
-  color: var(--ink-muted);
-}
-
-.page-hero--soft::after {
-  background: linear-gradient(90deg, var(--brand-red), var(--brand-blue), var(--brand-silver));
-}
-
 .contact-section {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(238, 241, 246, 0.65));
 }

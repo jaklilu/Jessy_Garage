@@ -10,22 +10,26 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="container site-footer__grid">
-        <div>
+        <div className="site-footer__card">
           <img src="/logo.png" alt={BUSINESS_NAME} className="site-footer__logo" />
           <p>{t.footer.aboutBlurb}</p>
           <p className="site-footer__tag">{t.common.tagline}</p>
         </div>
-        <div>
+
+        <div className="site-footer__card">
           <h3>{t.nav.contact}</h3>
-          <p>
-            <a href={`tel:${PHONE_TEL}`}>{t.common.phone}</a>
-          </p>
+          <a className="site-footer__phone" href={`tel:${PHONE_TEL}`}>
+            {t.common.phone}
+          </a>
           <p>{t.common.address}</p>
-          <p>{t.common.hoursDays}, {t.common.hoursTime}</p>
+          <p>
+            {t.common.hoursDays}, {t.common.hoursTime}
+          </p>
           <p>{t.common.emergency}</p>
           <p>{t.common.serviceArea}</p>
         </div>
-        <div>
+
+        <div className="site-footer__card">
           <h3>{t.footer.pages}</h3>
           <ul className="site-footer__links">
             <li>
@@ -47,10 +51,13 @@ export function Footer() {
               <ScrollLink to={pathFor(locale, "contact")}>{t.nav.contact}</ScrollLink>
             </li>
           </ul>
-          <p className="site-footer__note">{t.common.payments}</p>
-          <p className="site-footer__note">{t.common.bilingual}</p>
+          <div className="site-footer__badges">
+            <p className="site-footer__note">{t.common.payments}</p>
+            <p className="site-footer__note">{t.common.bilingual}</p>
+          </div>
         </div>
       </div>
+
       <div className="site-footer__bottom">
         <div className="container">
           © {year} {BUSINESS_NAME}. {t.footer.rights}

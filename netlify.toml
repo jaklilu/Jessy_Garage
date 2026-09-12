@@ -2,7 +2,9 @@
   command = "npm run build"
   publish = "dist"
 
-# Serve static SEO/asset files directly (not as SPA shell)
+# ─────────────────────────────────────────────────────────────
+# Static files: served directly (not as SPA shell)
+# ─────────────────────────────────────────────────────────────
 [[redirects]]
   from = "/robots.txt"
   to = "/robots.txt"
@@ -23,13 +25,117 @@
   to = "/logo.png"
   status = 200
 
-# SPA fallback for all other routes
 [[redirects]]
-  from = "/*"
+  from = "/404.html"
+  to = "/404.html"
+  status = 200
+
+# ─────────────────────────────────────────────────────────────
+# Language cross-redirects for contact page
+# ─────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "/es/contact"
+  to = "/es/contacto"
+  status = 301
+
+[[redirects]]
+  from = "/en/contacto"
+  to = "/en/contact"
+  status = 301
+
+# ─────────────────────────────────────────────────────────────
+# SPA routes: known paths rewritten to index.html with 200
+# ─────────────────────────────────────────────────────────────
+
+# Root redirect
+[[redirects]]
+  from = "/"
   to = "/index.html"
   status = 200
 
-# Hide Netlify deploy badge on production
+# English routes
+[[redirects]]
+  from = "/en"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/repair"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/installations"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/testimonials"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/gallery"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/contact"
+  to = "/index.html"
+  status = 200
+
+# Spanish routes
+[[redirects]]
+  from = "/es"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/reparacion"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/instalaciones"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/testimonios"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/galeria"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/es/contacto"
+  to = "/index.html"
+  status = 200
+
+# ─────────────────────────────────────────────────────────────
+# 404 fallback: unknown routes get proper 404 status
+# ─────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# ─────────────────────────────────────────────────────────────
+# Headers
+# ─────────────────────────────────────────────────────────────
 [[headers]]
   for = "/*"
   [headers.values]
